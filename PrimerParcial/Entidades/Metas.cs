@@ -13,11 +13,19 @@ namespace PrimerParcial.Entidades
         public string Descripcion { get; set; }
         public decimal Cuota { get; set; }
 
+
+        [StringLength(100)]
+        
+
+        public virtual ICollection<Metasdetalle> Detalle { get; set; }
+
         public Metas()
         {
-            this.MetaID = 0;
-            this.Descripcion = string.Empty;
-            this.Cuota = 0;
+            this.Detalle = new List<Metasdetalle>();
+        }
+        public void AgregarDetalle( int MetaID, string Descripcion, int Cuota)
+        {
+            this.Detalle.Add(new Metasdetalle( MetaID, Descripcion, Cuota));
         }
     }
 }

@@ -46,19 +46,22 @@
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label6 = new System.Windows.Forms.Label();
             this.FechadateTimePicker = new System.Windows.Forms.DateTimePicker();
-            this.VendedoresdataGridView = new System.Windows.Forms.DataGridView();
+            this.DetalledataGridView = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
             this.MetanumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.Agregarbutton = new System.Windows.Forms.Button();
-            this.CuotatextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.Removerbutton = new System.Windows.Forms.Button();
+            this.CuotanumericUpDown = new System.Windows.Forms.NumericUpDown();
+            this.label9 = new System.Windows.Forms.Label();
+            this.DescripciontextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.IdnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.SueldonumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PorcientoRetencionnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresdataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MetanumericUpDown)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CuotanumericUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -155,7 +158,6 @@
             this.Eliminarbutton.Text = "Eliminar";
             this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.button3_Click);
             // 
             // Guardarbutton
             // 
@@ -222,13 +224,13 @@
             this.FechadateTimePicker.Size = new System.Drawing.Size(152, 20);
             this.FechadateTimePicker.TabIndex = 17;
             // 
-            // VendedoresdataGridView
+            // DetalledataGridView
             // 
-            this.VendedoresdataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.VendedoresdataGridView.Location = new System.Drawing.Point(85, 220);
-            this.VendedoresdataGridView.Name = "VendedoresdataGridView";
-            this.VendedoresdataGridView.Size = new System.Drawing.Size(433, 121);
-            this.VendedoresdataGridView.TabIndex = 18;
+            this.DetalledataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DetalledataGridView.Location = new System.Drawing.Point(85, 220);
+            this.DetalledataGridView.Name = "DetalledataGridView";
+            this.DetalledataGridView.Size = new System.Drawing.Size(433, 121);
+            this.DetalledataGridView.TabIndex = 18;
             // 
             // label7
             // 
@@ -256,13 +258,6 @@
             this.Agregarbutton.UseVisualStyleBackColor = true;
             this.Agregarbutton.Click += new System.EventHandler(this.Agregarbutton_Click);
             // 
-            // CuotatextBox
-            // 
-            this.CuotatextBox.Location = new System.Drawing.Point(314, 193);
-            this.CuotatextBox.Name = "CuotatextBox";
-            this.CuotatextBox.Size = new System.Drawing.Size(100, 20);
-            this.CuotatextBox.TabIndex = 22;
-            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -272,14 +267,38 @@
             this.label8.TabIndex = 23;
             this.label8.Text = "Cuota";
             // 
-            // button2
+            // Removerbutton
             // 
-            this.button2.Location = new System.Drawing.Point(432, 191);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 24;
-            this.button2.Text = "Agregar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.Removerbutton.Location = new System.Drawing.Point(529, 318);
+            this.Removerbutton.Name = "Removerbutton";
+            this.Removerbutton.Size = new System.Drawing.Size(75, 23);
+            this.Removerbutton.TabIndex = 24;
+            this.Removerbutton.Text = "Remover";
+            this.Removerbutton.UseVisualStyleBackColor = true;
+            this.Removerbutton.Click += new System.EventHandler(this.Removerbutton_Click);
+            // 
+            // CuotanumericUpDown
+            // 
+            this.CuotanumericUpDown.Location = new System.Drawing.Point(301, 193);
+            this.CuotanumericUpDown.Name = "CuotanumericUpDown";
+            this.CuotanumericUpDown.Size = new System.Drawing.Size(97, 20);
+            this.CuotanumericUpDown.TabIndex = 25;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(378, 15);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(63, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "Descripcion";
+            // 
+            // DescripciontextBox
+            // 
+            this.DescripciontextBox.Location = new System.Drawing.Point(452, 8);
+            this.DescripciontextBox.Name = "DescripciontextBox";
+            this.DescripciontextBox.Size = new System.Drawing.Size(152, 20);
+            this.DescripciontextBox.TabIndex = 27;
             // 
             // Registro
             // 
@@ -287,13 +306,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(666, 450);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.DescripciontextBox);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.CuotanumericUpDown);
+            this.Controls.Add(this.Removerbutton);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.CuotatextBox);
             this.Controls.Add(this.Agregarbutton);
             this.Controls.Add(this.MetanumericUpDown);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.VendedoresdataGridView);
+            this.Controls.Add(this.DetalledataGridView);
             this.Controls.Add(this.FechadateTimePicker);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
@@ -319,8 +340,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.SueldonumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PorcientoRetencionnumericUpDown)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.VendedoresdataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DetalledataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MetanumericUpDown)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.CuotanumericUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -346,11 +368,13 @@
         private System.Windows.Forms.DateTimePicker FechadateTimePicker;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DataGridView VendedoresdataGridView;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView DetalledataGridView;
+        private System.Windows.Forms.Button Removerbutton;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox CuotatextBox;
         private System.Windows.Forms.Button Agregarbutton;
         private System.Windows.Forms.NumericUpDown MetanumericUpDown;
+        private System.Windows.Forms.NumericUpDown CuotanumericUpDown;
+        private System.Windows.Forms.TextBox DescripciontextBox;
+        private System.Windows.Forms.Label label9;
     }
 }

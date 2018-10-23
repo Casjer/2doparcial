@@ -13,3 +13,11 @@ CREATE TABLE Parciale
 
 
   );
+
+
+  create table Metas
+  (
+     MetaID int primary key identity  (1,1),
+	 Descripcion varchar(30),
+	 Cuota decimal
+  );

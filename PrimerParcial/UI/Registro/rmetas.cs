@@ -24,8 +24,8 @@ namespace PrimerParcial.UI.Registro
         public bool validar()
         {
 
-            if (string.IsNullOrEmpty(MetaIdnumericUpDown.ToString())
-                {
+            if (string.IsNullOrEmpty(MetaIdnumericUpDown.ToString()))
+            { 
                 errorProvider1.SetError(MetaIdnumericUpDown, "Meta");
 
                 return false;

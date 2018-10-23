@@ -25,7 +25,7 @@ namespace PrimerParcial.Entidades
             Retencion = string.Empty;
             Fecha = DateTime.Now;
 
-            Meta = new List<Metas>();
+           
         }
     }
 }

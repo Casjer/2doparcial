@@ -120,9 +120,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="DAL\Script\SQLQuery1.sql" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\icons8_Delete_Document_32.png" />
     <None Include="Resources\icons8_Add_File_32.png" />
     <None Include="Resources\icons8_Save_as_32.png" />
@@ -130,6 +127,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Print_321.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="DAL\Script\SQLQuery1.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

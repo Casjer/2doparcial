@@ -19,19 +19,25 @@ namespace PrimerParcial
 
         private void registroToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UI.Registro.Registro rA = new UI.Registro.Registro();
-            rA.Show();
+           
         }
 
         private void vendedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            UI.Registro.Registro rA = new UI.Registro.Registro();
+            rA.Show();
         }
 
         private void consultaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             UI.Consulta.Consulta c = new UI.Consulta.Consulta();
             c.Show();
+        }
+
+        private void metasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UI.Registro.rmetas m = new UI.Registro.rmetas();
+            m.Show();
         }
     }
 }

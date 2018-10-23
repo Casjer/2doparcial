@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace PrimerParcial.UI.Registro
 {
@@ -145,18 +146,90 @@ namespace PrimerParcial.UI.Registro
 
         private void Agregarbutton_Click(object sender, EventArgs e)
         {
+            List<Metasdetalle> Detalle = new List<Metasdetalle>();
             rmetas rmeta = new rmetas();
-            if (VendedoresdataGridView.DataSource != null)
+            if (DetalledataGridView.DataSource != null)
+            {
+                Detalle = (List<Metasdetalle>)DetalledataGridView.DataSource;
+            }
 
-                this.Meta.ADD(
-                  new Metas(
-                       MetaId: (int)MetanumericUpDown.Value,
-                       Descripcion: string.Empty,
-                       Cuota : cuotaNumericUpDown.value
 
-                 );
-               
-              
+
+            Detalle.Add(
+              new Metasdetalle(
+                   MetaID: 0,
+                  Descripcion: (string)DescripciontextBox.ToString(),
+                   Cuota: (int)CuotanumericUpDown.Value
+
+             ));
+
+            DetalledataGridView.DataSource = null;
+            DetalledataGridView.DataSource = Detalle;
+        }
+
+        private void LlenarCampos(Metas Meta)
+        {
+            MetanumericUpDown.Value = Meta.MetaID;
+            DescripciontextBox.Text = Meta.Descripcion;
+            CuotanumericUpDown.Value = Meta.Cuota;
+            
+
+
+            DetalledataGridView.DataSource = Meta.Detalle;
+
+
+            DetalledataGridView.Columns["Id"].Visible = false;
+            DetalledataGridView.Columns["MetaID"].Visible = false;
+        }
+
+        private void Removerbutton_Click(object sender, EventArgs e)
+        {
+            
+                if (DetalledataGridView.Rows.Count > 0
+                  && DetalledataGridView.CurrentRow != null)
+                {
+
+                    List<Metasdetalle> Detalle
+                        = (List<Metasdetalle>)DetalledataGridView.DataSource;
+
+                    Detalle.RemoveAt(DetalledataGridView.CurrentRow.Index);
+
+
+                    DetalledataGridView.DataSource = null;
+                    DetalledataGridView.DataSource = Detalle;
+                }
+           
+        }
+
+        private bool Errores()
+        {
+            bool Errores = false;
+
+            if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
+            {
+                errorProvider1.SetError(DescripciontextBox,
+                    "No debes dejar el Comentario vacio");
+                Errores = true;
+            }
+
+            if (DetalledataGridView.RowCount == 0)
+            {
+                errorProvider1.SetError(DetalledataGridView,
+                    "Es obligatorio seleccionar las ciudades visitadas");
+                Errores = true;
+            }
+
+            return Errores;
+        }
+
+        private int ToInt(object valor)
+        {
+            int retorno = 0;
+
+            int.TryParse(valor.ToString(), out retorno);
+
+            return retorno;
         }
     }
 }
+
