@@ -208,14 +208,14 @@ namespace PrimerParcial.UI.Registro
             if (String.IsNullOrWhiteSpace(DescripciontextBox.Text))
             {
                 errorProvider1.SetError(DescripciontextBox,
-                    "No debes dejar el Comentario vacio");
+                    "No debes dejar el Descripcion vacio");
                 Errores = true;
             }
 
             if (DetalledataGridView.RowCount == 0)
             {
                 errorProvider1.SetError(DetalledataGridView,
-                    "Es obligatorio seleccionar las ciudades visitadas");
+                    "escribir Cuota");
                 Errores = true;
             }
 
